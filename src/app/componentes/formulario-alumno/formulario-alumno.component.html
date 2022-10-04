@@ -1,0 +1,77 @@
+<div class="card col-xl-12 col-lg-12 col-md-12">
+    <div class="card-header">
+        <h3>Ingresar Alumno</h3>
+    </div>
+    <div class="card-body">
+        <div class="col col-xl-12 col-lg-12 col-md-12">
+            <form [formGroup]="formularioAlumno" (ngSubmit)="agregarAlumno()">
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Nombres: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <input type="text" class="form-control" formControlName="nombres">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Apellidos: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <input type="text" class="form-control" formControlName="apellidos">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Correo: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <input type="text" class="form-control" formControlName="email">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Contrasena: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <input type="password" class="form-control" formControlName="contrasena">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Confirmar contrasena: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <input type="password" class="form-control" formControlName="contrasena2">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Genero: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <ng-select class="form-control form-select" formControlName="genero" >
+                            <ng-option value="{{ item.id }}" *ngFor="let item of generos" >{{ item.descripcion }}</ng-option>
+                        </ng-select>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-xl-4 col-lg-4 col-md-4">
+                      <label class="form-label">Admin: </label>
+                    </div>
+                    <div class="col-xl-8 col-lg-8 col-md-8">
+                        <input class="form-check-input" type="checkbox" formControlName="admin">
+                    </div>
+                </div>  
+                <br>          
+                <button type="button" class="btn btn-outline-success" type="submit">Agregar Alumno</button>
+            </form> 
+        </div>
+    </div>
+</div>
